@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>friend-demo</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 配置servlet -->
+  <servlet>
+	  <servlet-name>LoginServlet</servlet-name>
+	  <!-- 要写完整的类名 (包名.类名)-->
+	  <servlet-class>com.qf.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <!-- 用户列表-->
+	<servlet>
+		<servlet-name>ListUserServlet</servlet-name>
+		<servlet-class>com.qf.servlet.ListUserServlet</servlet-class>
+	</servlet>
+	<!-- 用户注册-->
+	<servlet>
+		<servlet-name>registServlet</servlet-name>
+		<servlet-class>com.qf.servlet.registServlet</servlet-class>
+	</servlet>
+    <!-- 验证码-->
+	<servlet>
+		<servlet-name>CheckcodeServlet</servlet-name>
+		<servlet-class>com.qf.servlet.CheckcodeServlet</servlet-class>
+	</servlet>
+	 <!-- 用户详情-->
+	<servlet>
+		<servlet-name>userDetailServlet</servlet-name>
+		<servlet-class>com.qf.servlet.userDetailServlet</servlet-class>
+	</servlet>
+	<!-- 文件上传下载-->
+	<servlet>
+		<servlet-name>uploadServlet</servlet-name>
+		<servlet-class>com.qf.servlet.uploadServlet</servlet-class>
+	</servlet>
+  <servlet-mapping>
+  	<!-- 注意name要上下一致 -->
+  	<servlet-name>LoginServlet</servlet-name>
+  	<!-- /不能丢 -->
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+		<servlet-name>ListUserServlet</servlet-name>
+		<url-pattern>/list</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>registServlet</servlet-name>
+		<url-pattern>/regist</url-pattern>
+	</servlet-mapping>
+  	<servlet-mapping>
+		<servlet-name>CheckcodeServlet</servlet-name>
+		<url-pattern>/checkcode</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>uploadServlet</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>userDetailServlet</servlet-name>
+		<url-pattern>/detail</url-pattern>
+	</servlet-mapping>
+  
+  
+</web-app>
